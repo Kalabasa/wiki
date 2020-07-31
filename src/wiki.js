@@ -42,7 +42,7 @@ export default function wiki(options = {}) {
 	const apiOptions = Object.assign({}, defaultOptions, options);
 
 	function handleRedirect(res) {
-		if (res.query.redirects && res.query.redirects.length === 1) {
+		if (res.query && res.query.redirects && res.query.redirects.length === 1) {
 			return api(apiOptions, {
 				prop: 'info|pageprops',
 				inprop: 'url',
